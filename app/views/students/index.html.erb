@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Students</h1>
+<hr>
+<div id="students">
+<%= link_to "Add New student", new_student_path, :class => "btn btn-success mb-3" %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</i></th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <th scope="row">1</th>
+        <td><%= student.name %></td>
+        <td><%= student.gender %>
+          <% if student.gender == 'male' %>
+            <i class="bi bi-gender-male"></i>
+          <% elsif student.gender == 'female' %>
+            <i class="bi bi-gender-female"></i>
+          <% else %>
+            <i class="bi bi-gender-ambiguous"></i>
+          <% end %>
+        </td>
+        <td><%= student.date_of_birth %></td>
+        <td>
+          <%= link_to "Show", student, :class => "btn btn-secondary" %>
+          <%= link_to "Edit", edit_student_path(student), :class => "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
