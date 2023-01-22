@@ -1,17 +1,10 @@
-<div id="<%= dom_id student %>">
-  <p>
-    <strong>Name:</strong>
-    <%= student.name %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= student.gender %>
-  </p>
-
-  <p>
-    <strong>Date of birth:</strong>
-    <%= student.date_of_birth %>
-  </p>
-
+<div class="card" style="width: 18rem; margin-bottom: 30px;" id="<%= dom_id student %>">
+  <div class="card-header">
+    <b>Student</b>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name : <%= student.name %></li>
+    <li class="list-group-item">Gender : <%= student.gender %></li>
+    <li class="list-group-item">Date of birth : <%= student.date_of_birth %></li>
+  </ul>
 </div>
