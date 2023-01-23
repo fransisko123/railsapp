@@ -8,6 +8,7 @@
 <hr>
 <div id="students">
 <%= link_to "Add New student", new_student_path, :class => "btn btn-success mb-3" %>
+<%= link_to "Download CSV", download_csv_path, :class => "btn btn-primary mb-3" %>
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
@@ -42,5 +43,6 @@
       <% end %>
       </tbody>
     </table>
+    <%= paginate @students, theme: 'bootstrap-5' %>
   </div>
 </div>

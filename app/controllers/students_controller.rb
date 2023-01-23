@@ -3,7 +3,12 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.all
+    @students = Student.order(:name).page params[:page]
+    # @students = Student.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @students.to_json }
+    end
   end
 
   # GET /students/1 or /students/1.json
@@ -55,6 +60,13 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: "Student was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def download_csv
+    male_students = Student.where(gender: 'Male')
+    famale_students = Student.where(gender: 'Female')
+    all_students = Student.all
+    send_data Student.to_csv(all_students), filename: "Students-#{Date.today}.csv"
   end
 
   private
