@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Levels</h1>
+<br>
+<%#= link_to "New level", new_level_path, class: "btn btn-success mb-4 mt-4" %>
+
+<div id="levels">
+  <% @levels.each do |level| %>
+    <%= render level %>
+  <% end %>
+</div>

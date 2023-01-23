@@ -1,0 +1,36 @@
+<div class="row" style="display: inline-block;" id="<%= dom_id level %>">
+  <div class="col-md-4" style="width: 100%;">
+  <% if level.title == 'Beginner' %>
+    <div class="card border-success mb-3" style="width: 265px;">
+      <div class="card-header"><%= level.title %></div>
+        <div class="card-body text-success">
+        <h5 class="card-title"><%= level.title %></h5>
+        <p class="card-text"><%= level.description %>.</p>
+        <%= link_to "Edit this level", edit_level_path(level), :class => "btn btn-success" %>
+  <% elsif level.title == 'Intermediate' %>
+    <div class="card border-warning mb-3" style="width: 265px;">
+     <div class="card-header"><%= level.title %></div>
+        <div class="card-body text-warning">
+        <h5 class="card-title"><%= level.title %></h5>
+        <p class="card-text"><%= level.description %>.</p>
+        <%= link_to "Edit this level", edit_level_path(level), :class => "btn btn-warning" %>
+  <% elsif level.title == 'Advanced' %>
+    <div class="card border-danger mb-3" style="width: 265px;">
+     <div class="card-header"><%= level.title %></div>
+        <div class="card-body text-danger">
+        <h5 class="card-title"><%= level.title %></h5>
+        <p class="card-text"><%= level.description %>.</p>
+        <%= link_to "Edit this level", edit_level_path(level), :class => "btn btn-danger" %>
+  <% else %>
+    <div class="card border-secondary mb-3" style="width: 265px;">
+     <div class="card-header"><%= level.title %></div>
+        <div class="card-body text-secondary">
+        <h5 class="card-title"><%= level.title %></h5>
+        <p class="card-text"><%= level.description %>.</p>
+        <%= link_to "Edit this level", edit_level_path(level), :class => "btn btn-secondary" %>
+  <% end %>
+      </div>
+    </div>
+    </a>
+  </div>
+</div>

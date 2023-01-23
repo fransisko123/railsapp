@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   require 'csv'
-
+  belongs_to :level
   paginates_per 10
 
   validates :name, presence: true
@@ -9,9 +9,9 @@ class Student < ApplicationRecord
 
   def self.to_csv collection
     CSV.generate(col_sep: ";") do |csv|
-      csv << ["Name", "Gender", "Date Of Birth"]
+      csv << ["Name", "Gender", "Date Of Birth", "Level"]
       collection.find_each do |student|
-        csv << [student.name, student.gender, student.date_of_birth]
+        csv << [student.name, student.gender, student.date_of_birth, student.level.title]
       end
     end
   end

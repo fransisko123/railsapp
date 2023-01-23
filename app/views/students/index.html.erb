@@ -17,6 +17,7 @@
           <th scope="col">Name</th>
           <th scope="col">Gender</i></th>
           <th scope="col">Date of birth</th>
+          <th scope="col">Level</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -35,6 +36,7 @@
             <% end %>
           </td>
           <td><%= student.date_of_birth %></td>
+          <td><%= student.level.title %></td>
           <td>
             <%= link_to "Show", student, :class => "btn btn-secondary" %>
             <%= link_to "Edit", edit_student_path(student), :class => "btn btn-primary" %>

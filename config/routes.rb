@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  resources :levels
   resources :students do
     get '/page/:page', action: :index, on: :collection
   end
