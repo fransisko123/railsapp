@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.order(:name).page params[:page]
+    @students = Student.all
     # @students = Student.all
     respond_to do |format|
       format.html

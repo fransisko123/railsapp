@@ -1,7 +1,6 @@
 class Student < ApplicationRecord
   require 'csv'
   belongs_to :level
-  paginates_per 10
 
   validates :name, presence: true
   validates :gender, presence: true

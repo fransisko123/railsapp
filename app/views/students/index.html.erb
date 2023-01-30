@@ -6,14 +6,13 @@
 
 <h1>Students</h1>
 <hr>
-<div id="students">
+<div id="students" class="mb-5">
 <%= link_to "Add New student", new_student_path, :class => "btn btn-success mb-3" %>
 <%= link_to "Download CSV", download_csv_path, :class => "btn btn-primary mb-3" %>
   <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-striped" id="studentTable">
       <thead>
         <tr>
-          <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Gender</i></th>
           <th scope="col">Date of birth</th>
@@ -24,7 +23,6 @@
       <tbody>
       <% @students.each_with_index do |student, i| %>
         <tr>
-          <th scope="row"><%= i + 1 %></th>
           <td><%= student.name %></td>
           <td><%= student.gender %>
             <% if student.gender == 'male' %>
@@ -45,6 +43,5 @@
       <% end %>
       </tbody>
     </table>
-    <%= paginate @students, theme: 'bootstrap-5' %>
   </div>
 </div>
